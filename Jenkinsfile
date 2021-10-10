@@ -67,7 +67,7 @@ pipeline{
                 sh "mvn -gs ${WORKSPACE}/settings.xml deploy"
                }
             }
-
+/**/
         stage ("Ansible") {
             steps {
                  ansible-playbook local_host_ping.yml
