@@ -1,9 +1,9 @@
 pipeline{ 
     agent any 
-   /* tools {
+    tools {
         maven 'Maven3.8'
         
-      }*/
+      }
     stages{
 
 /*  created by Prasanth   */
