@@ -1,9 +1,9 @@
-pipeline{ 
-    agent any 
+pipeline{
+    agent any
     tools {
-        maven 'Maven3.8.2'
-        
-      }
+        maven 'Maven3.13'
+
+    }
     stages{
 
         stage ("Build"){
@@ -11,7 +11,7 @@ pipeline{
 
                 sh "mvn -B -DskipTests clean package"
             }
-            }
+        }
 
 
         /*stage ("sonar scanning") {
@@ -33,10 +33,10 @@ pipeline{
 /*  created by Prasanth   */
         stage ("Ansible") {
             steps {
-                 ansible-playbook local_host_ping.yml
-               }
+                ansible-playbook local_host_ping.yml
             }
-        
+        }
+
     }
     post{
         always{
