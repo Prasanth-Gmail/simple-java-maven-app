@@ -34,6 +34,7 @@ pipeline{
                 sh "mvn -B -DskipTests clean package"
             }
             }
+
         stage ("Test"){
             steps{
                 
@@ -64,6 +65,12 @@ pipeline{
         stage ("Upload to Nexus") {
             steps {
                 sh "mvn -gs ${WORKSPACE}/settings.xml deploy"
+               }
+            }
+
+        stage ("Ansible") {
+            steps {
+                 ansible-playbook local_host_ping.yml
                }
             }
         
