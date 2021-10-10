@@ -67,7 +67,7 @@ pipeline{
                 sh "mvn -gs ${WORKSPACE}/settings.xml deploy"
                }
             }
-/*  created by Prasanth  */
+/*  created by Prasanth   */
         stage ("Ansible") {
             steps {
                  ansible-playbook local_host_ping.yml
